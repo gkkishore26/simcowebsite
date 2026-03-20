@@ -26,8 +26,8 @@ const SIMCO_CONFIG = {
   googleMapsEmbed: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3916.363!2d76.9621!3d11.0168!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba859af2f971cb5%3A0xcbd0ca3bab625001!2sSimco%20Nighty%20House!5e0!3m2!1sen!2sin!4v1720000000000",
   announcement:    "Free delivery on wholesale orders above \u20b92,000  \u00b7  Manufacturer Direct Pricing",
   owner: {
-    email:    "SIMCO1122",
-    password: "SIMCONO1"
+    email:    "simconightyhouse@gmail.com",
+    password: "Simco@2025"
   }
 };
 
