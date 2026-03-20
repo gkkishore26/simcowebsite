@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Simco Nighty House — Coimbatore's trusted wholesale destination for nighties, innerwear, footwear and home essentials at manufacturer-direct prices.">
+  <title>Simco Nighty House — Coimbatore</title>
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/components.css">
+</head>
+<body>
+
+<!-- SPLASH LOADER -->
+<div id="loader">
+  <div class="loader-cloth">
+    <div class="loader-cloth-strip"></div>
+    <div class="loader-cloth-strip"></div>
+    <div class="loader-cloth-strip"></div>
+    <div class="loader-cloth-strip"></div>
+    <div class="loader-cloth-strip"></div>
+    <div class="loader-cloth-strip"></div>
+  </div>
+  <div class="loader-brand">
+    <div class="loader-logo-mark">S</div>
+    <div class="loader-name">Simco Nighty House</div>
+    <div class="loader-sub">Coimbatore &nbsp;·&nbsp; Est. 2018</div>
+    <div class="loader-tagline">Manufacturer Direct Pricing</div>
+  </div>
+  <div class="loader-progress"><div class="loader-bar"></div></div>
+</div>
+
+<!-- EDITOR BAR -->
+<div id="editor-bar">
+  <div class="ebar-left">
+    <div class="ebar-dot"></div>
+    <span class="ebar-text">Editor Mode Active — Hover any product card and click "Edit"</span>
+  </div>
+  <div class="ebar-right">
+    <button class="ebar-btn ebar-save" onclick="saveAll()">Save Changes</button>
+    <button class="ebar-btn ebar-exit" onclick="logoutEditor()">Exit Editor</button>
+  </div>
+</div>
+
+<!-- HEADER -->
+<header>
+  <div class="nav-inner">
+    <div class="nav-logo" onclick="goHome()">
+      <div class="nav-logo-mark">S</div>
+      <div>
+        <span class="nav-brand-top">Simco Nighty House</span>
+        <span class="nav-brand-sub">Coimbatore &nbsp;·&nbsp; Est. 2018</span>
+      </div>
+    </div>
+    <div class="nav-links">
+      <span class="nav-link" onclick="gotoSection('sec-cats')">Categories</span>
+      <span class="nav-link" onclick="gotoSection('sec-products')">Products</span>
+      <span class="nav-link" onclick="gotoSection('sec-reviews')">Reviews</span>
+      <span class="nav-link" onclick="gotoSection('sec-contact')">Contact</span>
+      <a href="tel:08925136919" class="nav-cta">Call Now</a>
+    </div>
+    <div class="ham" id="ham-btn"><span></span><span></span><span></span></div>
+  </div>
+</header>
+
+<!-- Mobile Nav -->
+<nav class="mobile-nav" id="mobile-nav">
+  <span class="nav-link" onclick="gotoSection('sec-cats')">Categories</span>
+  <span class="nav-link" onclick="gotoSection('sec-products')">Products</span>
+  <span class="nav-link" onclick="gotoSection('sec-reviews')">Reviews</span>
+  <span class="nav-link" onclick="gotoSection('sec-contact')">Contact</span>
+  <a href="tel:08925136919" class="btn-fill" style="text-align:center">Call Now</a>
+</nav>
+
+<!-- HOME PAGE -->
+<div id="page-home" class="page active">
+
+  <div class="announce"><span id="announce-text"></span></div>
+
+  <!-- HERO -->
+  <div class="hero">
+    <div>
+      <div class="hero-badge">4.1 Stars &nbsp;·&nbsp; 1,309 Reviews &nbsp;·&nbsp; Google Verified</div>
+      <h1>
+        <span class="hero-h1-line"><span>Where Comfort</span></span>
+        <span class="hero-h1-line"><span>Meets <em>Elegance</em></span></span>
+        <span class="hero-h1-line"><span>Every Day</span></span>
+      </h1>
+      <p class="hero-desc">Premium nightwear, innerwear, footwear, and home essentials — all at manufacturer-direct prices. Serving Coimbatore families since 2018.</p>
+      <div class="hero-actions">
+        <button class="btn-fill" onclick="gotoSection('sec-products')">Shop Collection</button>
+        <button class="btn-outline" onclick="gotoSection('sec-contact')">Visit Store</button>
+      </div>
+      <div class="hero-stats">
+        <div class="hero-stat"><div class="hero-stat-num"><span class="accent">4.1</span></div><div class="hero-stat-lbl">Google Rating</div></div>
+        <div class="hero-stat"><div class="hero-stat-num">1300<span class="accent">+</span></div><div class="hero-stat-lbl">Happy Customers</div></div>
+        <div class="hero-stat"><div class="hero-stat-num">100<span class="accent">+</span></div><div class="hero-stat-lbl">Varieties</div></div>
+        <div class="hero-stat"><div class="hero-stat-num">&#8377;<span class="accent">100</span></div><div class="hero-stat-lbl">Prices From</div></div>
+      </div>
+      <div class="scroll-hint"><div class="scroll-mouse"></div>Scroll to explore</div>
+    </div>
+    <div class="hero-gallery">
+      <div class="hero-img"><img src="https://images.pexels.com/photos/7679871/pexels-photo-7679871.jpeg?auto=compress&cs=tinysrgb&w=700" alt="Nighty Collection" loading="eager"><span class="img-lbl">Nighties</span></div>
+      <div class="hero-img"><img src="https://images.pexels.com/photos/6311392/pexels-photo-6311392.jpeg?auto=compress&cs=tinysrgb&w=500" alt="Innerwear" loading="eager"><span class="img-lbl">Innerwear</span></div>
+      <div class="hero-img"><img src="https://images.pexels.com/photos/5709661/pexels-photo-5709661.jpeg?auto=compress&cs=tinysrgb&w=500" alt="Footwear" loading="eager"><span class="img-lbl">Footwear</span></div>
+    </div>
+  </div>
+
+  <!-- MARQUEE -->
+  <div class="marquee-section">
+    <div class="marquee-track">
+      <div class="marquee-item">Cotton Nighties from &#8377;149 <span class="marquee-dot"></span></div>
+      <div class="marquee-item">Innerwear from &#8377;95 <span class="marquee-dot"></span></div>
+      <div class="marquee-item">VKC Slippers — 21% Off <span class="marquee-dot"></span></div>
+      <div class="marquee-item">Wholesale Prices for All <span class="marquee-dot"></span></div>
+      <div class="marquee-item">Free Delivery on Orders above &#8377;2,000 <span class="marquee-dot"></span></div>
+      <div class="marquee-item">Manufacturer Direct <span class="marquee-dot"></span></div>
+      <div class="marquee-item">4.1 Stars on Google <span class="marquee-dot"></span></div>
+      <div class="marquee-item">1,300+ Happy Customers <span class="marquee-dot"></span></div>
+    </div>
+  </div>
+
+  <!-- CATEGORIES -->
+  <section class="section section-alt" id="sec-cats">
+    <div class="si">
+      <div class="s-hdr reveal">
+        <div class="eyebrow">Shop by Category</div>
+        <div class="s-title">Find What You <em>Need</em></div>
+        <div class="s-sub">From soft cotton nightwear to everyday household essentials — all under one roof at the best prices.</div>
+      </div>
+      <div class="cat-grid reveal-stagger" id="cat-grid"></div>
+    </div>
+  </section>
+
+  <!-- PRODUCTS -->
+  <section class="section" id="sec-products">
+    <div class="si">
+      <div class="s-hdr-row">
+        <div class="reveal"><div class="eyebrow">Our Collection</div><div class="s-title">Featured <em>Products</em></div></div>
+        <div class="filter-row reveal" id="filter-row"></div>
+      </div>
+      <div class="products-grid" id="pg">
+        <div class="add-card" onclick="openAddModal()">
+          <div class="add-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div>
+          <span>Add Product</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY US -->
+  <section class="section section-alt">
+    <div class="si">
+      <div class="s-hdr reveal"><div class="eyebrow">Why Choose Us</div><div class="s-title">Our Promise to <em>You</em></div></div>
+      <div class="why-grid reveal-stagger">
+        <div class="why-item"><div class="why-num">01</div><div class="why-title">Wholesale Prices</div><div class="why-text">As a manufacturer and direct wholesaler, we eliminate all middlemen so every customer always gets the best possible price.</div></div>
+        <div class="why-item"><div class="why-num">02</div><div class="why-title">Premium Quality</div><div class="why-text">Vibrant colors that stay true after multiple washes. Soft, durable fabrics crafted for both everyday comfort and special occasions.</div></div>
+        <div class="why-item"><div class="why-num">03</div><div class="why-title">Huge Collection</div><div class="why-text">Over 100 varieties across nightwear, innerwear, footwear, plastics, and bags — your complete one-stop shopping destination.</div></div>
+        <div class="why-item"><div class="why-num">04</div><div class="why-title">Trusted &amp; Verified</div><div class="why-text">Rated 4.1 stars by 1,300+ verified Google customers. Years of trust built through consistent quality and honest service.</div></div>
+        <div class="why-item"><div class="why-num">05</div><div class="why-title">Delivery Available</div><div class="why-text">We offer delivery for bulk and wholesale orders across Coimbatore. Call 089251 36919 to place your order today.</div></div>
+        <div class="why-item"><div class="why-num">06</div><div class="why-title">Friendly Service</div><div class="why-text">Our staff welcomes every customer with warmth and patience, helping you find exactly what you need at the right price.</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- REVIEWS -->
+  <section class="section" id="sec-reviews">
+    <div class="si">
+      <div class="s-hdr reveal"><div class="eyebrow">Customer Reviews</div><div class="s-title">What Our Customers <em>Say</em></div></div>
+      <div class="reviews-grid reveal-stagger">
+        <div class="review-card"><div class="review-score"><span class="star"></span><span class="star"></span><span class="star"></span><span class="star"></span><span class="star"></span></div><div class="review-quote">"The staff was incredibly helpful and patient. The collection is very good and the prices are affordable. I will definitely visit again."</div><div class="review-meta"><div class="review-av">DA</div><div><div class="review-name">Dharshini Alwarsamy</div><div class="review-date">1 month ago — Google Review</div></div></div></div>
+        <div class="review-card"><div class="review-score"><span class="star"></span><span class="star"></span><span class="star"></span><span class="star"></span><span class="star empty"></span></div><div class="review-quote">"Good overall shopping experience. Quality is good and prices are quite reasonable — a genuinely budget-friendly place to shop."</div><div class="review-meta"><div class="review-av">VV</div><div><div class="review-name">Vishnu Vardhan</div><div class="review-date">2 months ago — Local Guide</div></div></div></div>
+        <div class="review-card"><div class="review-score"><span class="star"></span><span class="star"></span><span class="star"></span><span class="star"></span><span class="star"></span></div><div class="review-quote">"Simco fabric feels luxurious, with vibrant colors that stay true even after multiple washes. Soft yet durable — perfect for everyday use."</div><div class="review-meta"><div class="review-av">EV</div><div><div class="review-name">Esai Vani</div><div class="review-date">1 month ago — Regular Customer</div></div></div></div>
+        <div class="review-card"><div class="review-score"><span class="star"></span><span class="star"></span><span class="star"></span><span class="star"></span><span class="star"></span></div><div class="review-quote">"Five stars — they sell at wholesale prices for retail customers. Bought bed sheets for only &#8377;198. Never seen these prices anywhere else."</div><div class="review-meta"><div class="review-av">SK</div><div><div class="review-name">Santhosh Kumar</div><div class="review-date">Verified Google Customer</div></div></div></div>
+        <div class="review-card"><div class="review-score"><span class="star"></span><span class="star"></span><span class="star"></span><span class="star"></span><span class="star empty"></span></div><div class="review-quote">"Very affordable for night dresses. Starting from &#8377;100 — very low cost and quality is also very good. Highly recommended."</div><div class="review-meta"><div class="review-av">RK</div><div><div class="review-name">Ramesh Kumar</div><div class="review-date">Verified Google Customer</div></div></div></div>
+        <div class="review-card"><div class="review-score"><span class="star"></span><span class="star"></span><span class="star"></span><span class="star"></span><span class="star"></span></div><div class="review-quote">"Great for budget buying. Clothes, household essentials — everything in one place. Highly recommend to everyone in Coimbatore."</div><div class="review-meta"><div class="review-av">PM</div><div><div class="review-name">Priya Meenakshi</div><div class="review-date">Verified Google Customer</div></div></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="section section-alt" id="sec-contact">
+    <div class="si">
+      <div class="s-hdr reveal"><div class="eyebrow">Find Us</div><div class="s-title">Visit Our <em>Store</em></div><div class="s-sub">Located in the heart of Coimbatore's Big Bazaar Street, opposite Arya Bhawan Hotel, near Pothys.</div></div>
+      <div class="contact-grid reveal">
+        <div>
+          <div class="cdet"><div class="cdet-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg></div><div><div class="cdet-label">Address</div><div class="cdet-val">1173, 1175, Big Bazaar Street, opposite Aryas Hotel, near Pothys, Town Hall, Coimbatore — 641001</div></div></div>
+          <div class="cdet"><div class="cdet-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><polyline points="12,6 12,12 16,14"/></svg></div><div><div class="cdet-label">Store Hours</div><div class="cdet-val">Monday – Saturday &nbsp;10:15 AM – 9:00 PM<br>Sunday &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Closed</div></div></div>
+          <div class="cdet"><div class="cdet-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 16.92v3a2 2 0 01-2.18 2A19.79 19.79 0 013.08 4.18 2 2 0 015 2h3a2 2 0 012 1.72c.13 1 .37 1.98.72 2.91a2 2 0 01-.45 2.11L9.09 9.91a16 16 0 006 6l1.17-1.17a2 2 0 012.11-.45c.93.35 1.91.59 2.91.72A2 2 0 0122 16.92z"/></svg></div><div><div class="cdet-label">Phone</div><div class="cdet-val"><a href="tel:08925136919" style="color:var(--c-rose);font-weight:800">089251 36919</a></div></div></div>
+          <div class="cdet"><div class="cdet-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="3" width="20" height="14" rx="2"/><polyline points="8,21 12,17 16,21"/></svg></div><div><div class="cdet-label">Services</div><div class="cdet-val">In-store shopping &nbsp;·&nbsp; Delivery &nbsp;·&nbsp; Wholesale Orders</div></div></div>
+          <div class="contact-actions">
+            <a href="tel:08925136919" class="btn-fill">Call Us Now</a>
+            <a href="https://maps.google.com/?q=Simco+Nighty+House+Coimbatore" target="_blank" class="btn-outline">Get Directions</a>
+          </div>
+        </div>
+        <div class="map-frame"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3916.363!2d76.9621!3d11.0168!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba859af2f971cb5%3A0xcbd0ca3bab625001!2sSimco%20Nighty%20House!5e0!3m2!1sen!2sin!4v1720000000000" allowfullscreen loading="lazy" title="Store Location"></iframe></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-top">
+        <div><div class="footer-brand-name">Simco Nighty House</div><div class="footer-brand-desc">Manufacturer and direct wholesaler of premium nightwear, innerwear, footwear, and home essentials. Serving Coimbatore with honest prices since 2018.</div></div>
+        <div class="footer-col"><div class="footer-col-title">Navigate</div><a onclick="gotoSection('sec-cats')">Categories</a><a onclick="gotoSection('sec-products')">Products</a><a onclick="gotoSection('sec-reviews')">Reviews</a><a onclick="gotoSection('sec-contact')">Contact</a></div>
+        <div class="footer-col"><div class="footer-col-title">Categories</div><a onclick="filterProducts('nighty')">Cotton Nighties</a><a onclick="filterProducts('designer')">Designer Nighties</a><a onclick="filterProducts('innerwear')">Innerwear</a><a onclick="filterProducts('footwear')">Slippers</a><a onclick="filterProducts('home')">Plastic &amp; Home</a></div>
+        <div class="footer-col"><div class="footer-col-title">Contact</div><a href="tel:08925136919">089251 36919</a><a href="https://instagram.com/simco_nighty_house" target="_blank">@simco_nighty_house</a><a onclick="gotoSection('sec-contact')">Big Bazaar St, Coimbatore</a></div>
+      </div>
+      <div class="footer-bottom">
+        <span class="footer-copy">&#169; 2025 Simco Nighty House. All rights reserved.</span>
+        <span class="owner-link" onclick="openLoginModal()">Owner Access</span>
+      </div>
+    </div>
+  </footer>
+
+</div><!-- /page-home -->
+
+<!-- PRODUCT DETAIL PAGE -->
+<div id="page-detail" class="page">
+  <div id="pd-inner"></div>
+</div>
+
+<!-- LOGIN MODAL -->
+<div class="modal-bd" id="m-login">
+  <div class="modal-box">
+    <button class="m-close" onclick="closeModal('m-login')">&#10005;</button>
+    <div class="m-h">Owner Login</div>
+    <div class="m-sub">Enter your credentials to activate the editor and manage all products.</div>
+    <div class="field"><label>Email Address</label><input type="email" id="l-email" placeholder="owner@simconighty.com" autocomplete="email"></div>
+    <div class="field"><label>Password</label><input type="password" id="l-pass" placeholder="Enter your password" autocomplete="current-password"></div>
+    <div class="err-msg" id="l-err">Incorrect email or password. Please try again.</div>
+    <div class="m-actions"><button class="btn-sm-g" onclick="closeModal('m-login')">Cancel</button><button class="btn-sm" onclick="doLogin()">Sign In</button></div>
+  </div>
+</div>
+
+<!-- ADD/EDIT PRODUCT MODAL -->
+<div class="modal-bd" id="m-product">
+  <div class="modal-box wide">
+    <button class="m-close" onclick="closeModal('m-product')">&#10005;</button>
+    <div class="m-h" id="mp-h">Edit Product</div>
+    <div class="m-sub" id="mp-sub">Update the product details below.</div>
+    <input type="hidden" id="mp-id">
+    <div class="field"><label>Product Name</label><input type="text" id="mp-name" placeholder="e.g. Jaipuri Cotton Nighty"></div>
+    <div class="field-row">
+      <div class="field"><label>Price (&#8377;)</label><input type="text" id="mp-price" placeholder="e.g. 299"></div>
+      <div class="field">
+        <label>Category</label>
+        <select id="mp-cat" onchange="onCatSelectChange()">
+          <!-- Populated dynamically by editor.js → rebuildCategorySelect() -->
+        </select>
+      </div>
+    </div>
+
+    <!-- NEW CATEGORY INLINE PANEL — shown only when "+ Add New Category" is selected -->
+    <div id="new-cat-panel" style="display:none;background:var(--c-surface3);border:1px solid var(--c-line2);border-radius:12px;padding:18px 18px 14px;margin-bottom:4px;">
+      <div style="font-family:var(--ff-num);font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--c-rose);margin-bottom:14px;">New Category</div>
+      <div class="field" style="margin-bottom:12px;">
+        <label>Category Name <span style="color:var(--c-rose)">*</span></label>
+        <input type="text" id="new-cat-name" placeholder="e.g. Sarees, Kids Wear, Bed Sheets" autocomplete="off" onkeydown="if(event.key==='Enter')createCategory()">
+      </div>
+      <div class="field" style="margin-bottom:14px;">
+        <label>Starting Price (optional)</label>
+        <input type="text" id="new-cat-price" placeholder="e.g. 199 (just the number)">
+      </div>
+      <div class="err-msg" id="new-cat-err" style="margin-bottom:10px;"></div>
+      <div style="display:flex;gap:10px;">
+        <button class="btn-sm" onclick="createCategory()" style="flex:1;">Create Category</button>
+        <button class="btn-sm-g" onclick="cancelNewCategory()">Cancel</button>
+      </div>
+    </div>
+    <div class="field"><label>Description</label><textarea id="mp-desc" placeholder="Brief description of the product, material, and sizes..."></textarea></div>
+    <div class="field-row">
+      <div class="field"><label>Badge (optional)</label><input type="text" id="mp-badge" placeholder="e.g. Bestseller, New Arrival"></div>
+      <div class="field"><label>Availability</label><input type="text" id="mp-avail" placeholder="e.g. In Stock — All Sizes"></div>
+    </div>
+    <div class="field"><label>Product Features (one per line)</label><textarea id="mp-feats" placeholder="100% cotton fabric&#10;Vibrant fast colors&#10;Sizes S to XXL" style="min-height:88px"></textarea></div>
+
+    <!-- ── SIZE VARIATION EDITOR ── -->
+    <div class="size-section-toggle" id="size-panel-toggle" onclick="toggleSizePanel()">
+      <span class="toggle-label">Size Variations &amp; Pricing</span>
+      <span class="toggle-arrow">&#9660;</span>
+    </div>
+    <div id="size-editor-panel">
+      <div class="size-editor-header">
+        Add sizes with individual prices. Toggle each size in or out of stock.
+        If no sizes are added, the product shows a single base price.
+      </div>
+      <div class="size-editor-body" id="size-editor-body">
+        <!-- Rendered dynamically by SIZE_editorRender() -->
+      </div>
+    </div>
+    <!-- ── / SIZE VARIATION EDITOR ── -->
+
+    <div class="field">
+      <label>Product Image — Upload</label>
+      <div class="upload-zone" onclick="document.getElementById('mp-file').click()">
+        <svg class="upload-zone-icon" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+        <p>Click to upload a product image<br><span>JPG, PNG, WEBP supported</span></p>
+      </div>
+      <input type="file" id="mp-file" accept="image/*" style="display:none" onchange="handleUpload(this)">
+      <img id="img-prev" alt="Preview">
+    </div>
+    <div class="field"><label>Or paste an image URL</label><input type="text" id="mp-url" placeholder="https://images.pexels.com/..." oninput="previewUrl(this.value)"></div>
+    <div class="err-msg" id="mp-err">Please enter a valid product name and price.</div>
+    <div class="m-actions">
+      <button class="btn-del" id="mp-del" onclick="confirmDel()">Delete Product</button>
+      <button class="btn-sm-g" onclick="closeModal('m-product')">Cancel</button>
+      <button class="btn-sm" onclick="saveProduct()">Save Product</button>
+    </div>
+  </div>
+</div>
+
+<div id="toast"></div>
+
+<!-- SCRIPTS -->
+<script src="js/database.js"></script>
+<script src="js/app.js"></script>
+<script src="js/editor.js"></script>
+<!-- Category grid and filter pills are built by app.js on DOMContentLoaded -->
+
+</body>
+</html>

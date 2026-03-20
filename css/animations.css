@@ -1,0 +1,144 @@
+/* ============================================================
+   animations.css — Simco Nighty House
+   Entrance animations, scroll reveals, micro-interactions
+   ============================================================ */
+
+/* ── PAGE TRANSITION ── */
+.page { display: none; }
+.page.active { display: block; animation: page-enter 0.4s ease both; }
+@keyframes page-enter { from { opacity: 0; } to { opacity: 1; } }
+
+/* ── SCROLL REVEAL BASE ── */
+.reveal {
+  opacity: 0;
+  transform: translateY(32px);
+  transition: opacity 0.65s cubic-bezier(0.4,0,0.2,1),
+              transform 0.65s cubic-bezier(0.4,0,0.2,1);
+}
+.reveal.visible { opacity: 1; transform: none; }
+
+/* Stagger delays for child elements */
+.reveal-stagger > * { opacity: 0; transform: translateY(24px); transition: opacity 0.55s ease, transform 0.55s ease; }
+.reveal-stagger.visible > *:nth-child(1)  { opacity: 1; transform: none; transition-delay: 0.05s; }
+.reveal-stagger.visible > *:nth-child(2)  { opacity: 1; transform: none; transition-delay: 0.12s; }
+.reveal-stagger.visible > *:nth-child(3)  { opacity: 1; transform: none; transition-delay: 0.19s; }
+.reveal-stagger.visible > *:nth-child(4)  { opacity: 1; transform: none; transition-delay: 0.26s; }
+.reveal-stagger.visible > *:nth-child(5)  { opacity: 1; transform: none; transition-delay: 0.33s; }
+.reveal-stagger.visible > *:nth-child(6)  { opacity: 1; transform: none; transition-delay: 0.40s; }
+.reveal-stagger.visible > *:nth-child(7)  { opacity: 1; transform: none; transition-delay: 0.47s; }
+.reveal-stagger.visible > *:nth-child(8)  { opacity: 1; transform: none; transition-delay: 0.54s; }
+.reveal-stagger.visible > *:nth-child(9)  { opacity: 1; transform: none; transition-delay: 0.61s; }
+
+/* ── NUMBER COUNTER ANIMATION ── */
+.count-up { display: inline-block; }
+
+/* ── GLOW PULSE (on rose elements) ── */
+.glow-pulse { animation: glow-anim 2.5s ease-in-out infinite; }
+@keyframes glow-anim {
+  0%, 100% { box-shadow: 0 0 20px rgba(232,64,92,0.3); }
+  50%       { box-shadow: 0 0 40px rgba(232,64,92,0.6); }
+}
+
+/* ── FLOATING ELEMENTS ── */
+.float {
+  animation: float-anim 5s ease-in-out infinite;
+}
+@keyframes float-anim {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(-10px); }
+}
+
+/* ── SHIMMER (for loading placeholders) ── */
+.shimmer {
+  background: linear-gradient(90deg, var(--c-surface2) 25%, var(--c-surface3) 50%, var(--c-surface2) 75%);
+  background-size: 200% 100%;
+  animation: shimmer-move 1.6s infinite;
+}
+@keyframes shimmer-move { from { background-position: 200% 0; } to { background-position: -200% 0; } }
+
+/* ── HERO IMAGE PARALLAX HINT ── */
+@media (min-width: 769px) {
+  .hero-img img {
+    will-change: transform;
+  }
+}
+
+/* ── CARD HOVER GLOW ── */
+.product-card::before {
+  content: '';
+  position: absolute;
+  inset: -1px;
+  border-radius: var(--r-lg);
+  background: linear-gradient(135deg, rgba(232,64,92,0.15), transparent, rgba(232,64,92,0.08));
+  opacity: 0;
+  transition: opacity var(--tr);
+  pointer-events: none;
+  z-index: 0;
+}
+.product-card:hover::before { opacity: 1; }
+.product-card > * { position: relative; z-index: 1; }
+
+/* ── SCROLL INDICATOR (hero) ── */
+.scroll-hint {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--ff-num);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--c-faint);
+  margin-top: 40px;
+  animation: fade-up 0.6s 1s ease both;
+}
+.scroll-mouse {
+  width: 22px; height: 34px;
+  border: 2px solid var(--c-line2);
+  border-radius: 11px;
+  position: relative;
+  flex-shrink: 0;
+}
+.scroll-mouse::after {
+  content: '';
+  width: 3px; height: 7px;
+  background: var(--c-rose);
+  border-radius: 2px;
+  position: absolute;
+  top: 5px;
+  left: 50%;
+  transform: translateX(-50%);
+  animation: scroll-mouse 1.8s ease infinite;
+}
+@keyframes scroll-mouse {
+  0%   { opacity: 1; transform: translateX(-50%) translateY(0); }
+  100% { opacity: 0; transform: translateX(-50%) translateY(14px); }
+}
+
+/* ── ROSE LINE DIVIDER ── */
+.rose-divider {
+  width: 48px;
+  height: 3px;
+  background: var(--c-rose);
+  border-radius: 2px;
+  margin: 20px 0;
+}
+
+/* ── MOBILE MENU SLIDE ── */
+.mobile-nav {
+  display: none;
+  position: fixed;
+  top: 72px; left: 0; right: 0;
+  background: rgba(13,10,8,0.98);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--c-line);
+  padding: 28px 24px 36px;
+  flex-direction: column;
+  gap: 24px;
+  z-index: 390;
+  animation: slide-down 0.28s ease;
+  box-shadow: 0 24px 64px rgba(0,0,0,0.6);
+}
+.mobile-nav.open { display: flex; }
+@keyframes slide-down { from { opacity: 0; transform: translateY(-12px); } to { opacity: 1; transform: none; } }
+.mobile-nav .nav-link { font-size: 14px; color: var(--c-ink2); }

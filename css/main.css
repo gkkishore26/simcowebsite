@@ -1,0 +1,268 @@
+/* ============================================================
+   main.css — Simco Nighty House
+   Base styles, CSS variables, typography, layout utilities
+   ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Nunito:wght@400;600;700;800;900&family=Oswald:wght@500;600;700&display=swap');
+
+/* ── RESET ── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; font-size: 16px; }
+body {
+  font-family: var(--ff-body);
+  background: var(--c-bg);
+  color: var(--c-ink);
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+img { display: block; max-width: 100%; }
+a { color: inherit; text-decoration: none; }
+button { font-family: var(--ff-body); cursor: pointer; border: none; background: none; }
+ul { list-style: none; }
+
+/* ── CUSTOM SCROLLBAR ── */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--c-bg); }
+::-webkit-scrollbar-thumb { background: var(--c-rose); border-radius: 3px; }
+
+/* ── CSS VARIABLES ── */
+:root {
+  /* Colors */
+  --c-bg:         #0d0a08;
+  --c-surface:    #181410;
+  --c-surface2:   #211c17;
+  --c-surface3:   #2a241e;
+  --c-line:       rgba(255,255,255,0.08);
+  --c-line2:      rgba(255,255,255,0.14);
+
+  --c-ink:        #ffffff;
+  --c-ink2:       rgba(255,255,255,0.85);
+  --c-muted:      rgba(255,255,255,0.50);
+  --c-faint:      rgba(255,255,255,0.28);
+
+  --c-rose:       #e8405c;
+  --c-rose-dark:  #c42e4a;
+  --c-rose-glow:  rgba(232, 64, 92, 0.18);
+  --c-rose-soft:  rgba(232, 64, 92, 0.10);
+
+  --c-gold:       #f0b429;
+  --c-gold-soft:  rgba(240, 180, 41, 0.12);
+
+  --c-green:      #34d399;
+
+  /* Typography */
+  --ff-display: 'Playfair Display', serif;
+  --ff-num:     'Oswald', sans-serif;
+  --ff-body:    'Nunito', sans-serif;
+
+  /* Spacing */
+  --r:    10px;
+  --r-lg: 20px;
+  --r-xl: 32px;
+
+  /* Transitions */
+  --tr: 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+  --tr-slow: 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+
+  /* Max width */
+  --max: 1300px;
+}
+
+/* ── UTILITY ── */
+.hidden  { display: none !important; }
+.sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0,0,0,0); }
+
+/* ── SECTION WRAPPER ── */
+.si { max-width: var(--max); margin: 0 auto; padding: 0 48px; }
+.section { padding: 96px 0; }
+.section-alt { background: var(--c-surface); }
+
+/* ── EYEBROW / SECTION LABELS ── */
+.eyebrow {
+  font-family: var(--ff-num);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--c-rose);
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.eyebrow::before {
+  content: '';
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: var(--c-rose);
+  border-radius: 1px;
+}
+
+/* ── SECTION TITLES ── */
+.s-title {
+  font-family: var(--ff-display);
+  font-size: clamp(36px, 4vw, 58px);
+  font-weight: 900;
+  color: var(--c-ink);
+  line-height: 1.06;
+  margin-bottom: 16px;
+}
+.s-title em { font-style: italic; color: var(--c-rose); }
+.s-sub {
+  font-family: var(--ff-body);
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--c-muted);
+  max-width: 520px;
+  line-height: 1.75;
+  margin-top: 14px;
+}
+.s-hdr { margin-bottom: 56px; }
+.s-hdr-row {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 24px;
+  flex-wrap: wrap;
+  margin-bottom: 40px;
+}
+
+/* ── BUTTONS ── */
+.btn-fill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--c-rose);
+  color: #fff;
+  padding: 16px 36px;
+  border-radius: 50px;
+  font-family: var(--ff-num);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  border: none;
+  cursor: pointer;
+  transition: all var(--tr);
+  position: relative;
+  overflow: hidden;
+}
+.btn-fill::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(255,255,255,0.12);
+  opacity: 0;
+  transition: opacity var(--tr);
+}
+.btn-fill:hover { background: var(--c-rose-dark); transform: translateY(-2px); box-shadow: 0 12px 32px rgba(232,64,92,0.4); }
+.btn-fill:hover::after { opacity: 1; }
+
+.btn-outline {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: transparent;
+  color: var(--c-ink);
+  padding: 15px 34px;
+  border-radius: 50px;
+  font-family: var(--ff-num);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  border: 2px solid var(--c-line2);
+  cursor: pointer;
+  transition: all var(--tr);
+}
+.btn-outline:hover { border-color: var(--c-rose); color: var(--c-rose); background: var(--c-rose-soft); }
+
+/* ── BADGE ── */
+.badge {
+  display: inline-block;
+  background: var(--c-rose);
+  color: #fff;
+  font-family: var(--ff-num);
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  padding: 5px 12px;
+  border-radius: 50px;
+}
+
+/* ── PRICE DISPLAY ── */
+.price-tag {
+  font-family: var(--ff-num);
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--c-ink);
+  letter-spacing: 1px;
+}
+.price-tag .rupee {
+  font-size: 18px;
+  color: var(--c-rose);
+  font-weight: 700;
+  margin-right: 2px;
+}
+
+/* ── CARD BASE ── */
+.card {
+  background: var(--c-surface2);
+  border: 1px solid var(--c-line);
+  border-radius: var(--r-lg);
+  overflow: hidden;
+  transition: all var(--tr);
+}
+.card:hover {
+  border-color: rgba(232, 64, 92, 0.4);
+  box-shadow: 0 20px 60px rgba(0,0,0,0.4), 0 0 0 1px rgba(232,64,92,0.15);
+  transform: translateY(-5px);
+}
+
+/* ── TOAST ── */
+#toast {
+  position: fixed;
+  bottom: 32px;
+  right: 32px;
+  z-index: 9999;
+  background: var(--c-surface3);
+  color: var(--c-ink);
+  border: 1px solid var(--c-line2);
+  padding: 14px 24px;
+  border-radius: var(--r-lg);
+  font-family: var(--ff-body);
+  font-size: 14px;
+  font-weight: 700;
+  opacity: 0;
+  transform: translateY(16px);
+  transition: all 0.3s ease;
+  pointer-events: none;
+  max-width: 340px;
+  line-height: 1.5;
+  backdrop-filter: blur(12px);
+}
+#toast.show { opacity: 1; transform: translateY(0); }
+#toast .toast-icon { color: var(--c-rose); margin-right: 6px; }
+
+/* ── RESPONSIVE BASE ── */
+@media (max-width: 1024px) { .si { padding: 0 32px; } }
+@media (max-width: 768px)  { .si { padding: 0 20px; } .section { padding: 64px 0; } }
+@media (max-width: 480px)  { .si { padding: 0 16px; } }
+
+/* ═══════════════════════════════
+   HERO — scroll hint animation delay fix
+═══════════════════════════════ */
+.hero-actions { animation-fill-mode: both; }
+.hero-stats   { animation-fill-mode: both; }
+
+/* ═══════════════════════════════
+   SECTION — padding responsive
+═══════════════════════════════ */
+@media (max-width: 600px) {
+  .section { padding: 56px 0; }
+  .s-hdr   { margin-bottom: 36px; }
+  .si      { padding: 0 16px; }
+}
